@@ -1,4 +1,4 @@
-library(quantmod)
+library(reshape2)
 library(data.table)
 
 setInternet2(TRUE)
@@ -19,9 +19,14 @@ files <- list.files(getwd())
 
 file <- paste(f)
 
-# Read the dataset and create a data table
+# Read the dataset
 
-dt <- data.table(read.csv(file))
+list.files("./UCI HAR Dataset")
+
+# features <- str(read.table("./UCI HAR Dataset/features.txt"))
+
+# activities <- str(read.table("./UCI HAR Dataset/activity_labels.txt"))
+
 
 # head(dt, 3)
 # Show all tables in memory and a summary of each
