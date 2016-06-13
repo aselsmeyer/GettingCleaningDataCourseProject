@@ -1,5 +1,6 @@
 library(reshape2)
 library(data.table)
+library(dplyr)
 
 setInternet2(TRUE)
 
@@ -9,7 +10,7 @@ url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR
 
 f <- file.path(getwd(), "Dataset.zip")
 
-download.file(url, f)
+download.file(url, f, method="curl")
 
 # Unzip the file
 
@@ -21,15 +22,16 @@ file <- paste(f)
 
 # Read the dataset
 
-list.files("./UCI HAR Dataset")
+# list.files("./UCI HAR Dataset")
 
-# features <- str(read.table("./UCI HAR Dataset/features.txt"))
+features <- read.table("./UCI HAR Dataset/features.txt")
+features[,2] <- as.character(features[,2])
 
-# activities <- str(read.table("./UCI HAR Dataset/activity_labels.txt"))
+activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
+activities[,2] <- as.character(activities[,2])
 
+# list.files("./UCI HAR Dataset/test")
+# list.files("./UCI HAR Dataset/train")
 
-# head(dt, 3)
-# Show all tables in memory and a summary of each
-# tables()
-# Subset data table 
-# dt[3,]
+# Extract mean and standard deviation
+
