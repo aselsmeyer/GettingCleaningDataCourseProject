@@ -22,7 +22,7 @@ file <- paste(f)
 
 # Read the dataset
 
-# list.files("./UCI HAR Dataset")
+list.files("./UCI HAR Dataset")
 
 features <- read.table("./UCI HAR Dataset/features.txt")
 features[,2] <- as.character(features[,2])
@@ -30,8 +30,8 @@ features[,2] <- as.character(features[,2])
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
 activities[,2] <- as.character(activities[,2])
 
-# list.files("./UCI HAR Dataset/test")
-# list.files("./UCI HAR Dataset/train")
+list.files("./UCI HAR Dataset/test")
+list.files("./UCI HAR Dataset/train")
 
 # Extract mean and standard deviation
 getFeatures <- grep(".*mean.*|.*std.*", features[,2])
