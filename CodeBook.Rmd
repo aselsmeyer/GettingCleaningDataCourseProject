@@ -30,11 +30,18 @@ For each record in the dataset it is provided:
 ## Variables
 * The downloaded files are 'activity_labels.txt', 'features.txt', 'features_info.txt', 'README.txt', 'test', and 'train'.
 * The data used is contained within 'train', 'test', 'trainActivities', 'testActivities', 'trainSubjects', and 'testSubjects'
-* 
+* 'features' and 'activities' are data tables containing the character data taken from 'activity_labels.txt' and 'features.txt'.
 * 'getFeatures.names' contains only the correct names of features for measurements of standard deviation or mean. 'getFeatures.names' is later applied to the column names of the 'fullData' dataset.
-
-
-
+* 'fullData' is the merged dataset.
+* 'fullData.melted' is the melted dataset containing only subjects and activities.
+* 'fullData.mean' is the dataset containing the mean of each subject and activity.
+* 'tidy.txt' is the final independent cleaned dataset containing the average of each variable for each activity and each subject.
 
 
 ## Study Design
+* First, all data is extracted from 'features' that contains standard deviation or mean data using the 'grep()' function.
+* Next the test and train datasets are read in using the 'read.table()' function. Subjects and Activities are bound in each dataset using the 'cbind()' function.
+* Test and Train datasets are merged using the 'rbind()' function. The new merged dataset is called 'fullData'.
+* Column names are corrected according to 'getFeatures.names'.
+* The 'fullData' set is melted to contain only subjects and activities and the mean is then taken of each variable in the dataset.
+* Last, we generate a new dataset called 'tidy.txt' using the 'write.table' function, and uploaded to the github repository.
