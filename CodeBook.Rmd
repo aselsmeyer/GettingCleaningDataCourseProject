@@ -1,12 +1,12 @@
 ---
-#title: "CodeBook"
-#author: "aselsmeyer"
-#date: "June 13, 2016"
-#output: html_document
+title: "CodeBook"
+author: "aselsmeyer"
+date: "June 27, 2016"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # 
