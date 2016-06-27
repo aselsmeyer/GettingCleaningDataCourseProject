@@ -1,12 +1,12 @@
 ---
-title: "CodeBook"
-author: "aselsmeyer"
-date: "June 13, 2016"
-output: html_document
+#title: "CodeBook"
+#author: "aselsmeyer"
+#date: "June 13, 2016"
+#output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # 
@@ -15,11 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Raw Data Set Information:
 The raw data set used in this project is called [Human Activity Recognition Using Smartphones Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 ##
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (`WALKING`, `WALKING_UPSTAIRS`, `WALKING_DOWNSTAIRS`, `SITTING`, `STANDING`, `LAYING`) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 #
-### Raw Data Set Attribute Information
+#### Raw Data Set Attribute Information
 For each record in the dataset it is provided: 
 * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
 * Triaxial Angular velocity from the gyroscope. 
@@ -28,20 +28,20 @@ For each record in the dataset it is provided:
 * An identifier of the subject who carried out the experiment.
 
 ## Variables
-* The downloaded files are 'activity_labels.txt', 'features.txt', 'features_info.txt', 'README.txt', 'test', and 'train'.
-* The data used is contained within 'train', 'test', 'trainActivities', 'testActivities', 'trainSubjects', and 'testSubjects'
-* 'features' and 'activities' are data tables containing the character data taken from 'activity_labels.txt' and 'features.txt'.
-* 'getFeatures.names' contains only the correct names of features for measurements of standard deviation or mean. 'getFeatures.names' is later applied to the column names of the 'fullData' dataset.
-* 'fullData' is the merged dataset.
-* 'fullData.melted' is the melted dataset containing only subjects and activities.
-* 'fullData.mean' is the dataset containing the mean of each subject and activity.
-* 'tidy.txt' is the final independent cleaned dataset containing the average of each variable for each activity and each subject.
+* The downloaded files are `activity_labels.txt`, `features.txt`, `features_info.txt`, `README.txt`, `test`, and `train`.
+* The data used is contained within `train`, `test`, `trainActivities`, `testActivities`, `trainSubjects`, and `testSubjects`
+* `features` and `activities` are data tables containing the character data taken from `activity_labels.txt` and `features.txt`.
+* `getFeatures.names` contains only the correct names of features for measurements of standard deviation or mean. `getFeatures.names` is later applied to the column names of the `fullData` dataset.
+* `fullData` is the merged dataset.
+* `fullData.melted` is the melted dataset containing only subjects and activities.
+* `fullData.mean` is the dataset containing the mean of each subject and activity.
+* `tidy.txt` is the final independent cleaned dataset containing the average of each variable for each activity and each subject.
 
 
 ## Study Design
-* First, all data is extracted from 'features' that contains standard deviation or mean data using the 'grep()' function.
-* Next the test and train datasets are read in using the 'read.table()' function. Subjects and Activities are bound in each dataset using the 'cbind()' function.
-* Test and Train datasets are merged using the 'rbind()' function. The new merged dataset is called 'fullData'.
-* Column names are corrected according to 'getFeatures.names'.
-* The 'fullData' set is melted to contain only subjects and activities and the mean is then taken of each variable in the dataset.
-* Last, we generate a new dataset called 'tidy.txt' using the 'write.table' function, and uploaded to the github repository.
+* First, all data is extracted from `features` that contains standard deviation or mean data using the `grep()` function.
+* Next the test and train datasets are read in using the `read.table()` function. Subjects and Activities are bound in each dataset using the `cbind()` function.
+* Test and Train datasets are merged using the `rbind()` function. The new merged dataset is called `fullData`.
+* Column names are corrected according to `getFeatures.names`.
+* The `fullData` set is melted to contain only subjects and activities and the mean is then taken of each variable in the dataset.
+* Last, we generate a new dataset called `tidy.txt` using the `write.table` function, and uploaded to the github repository.
