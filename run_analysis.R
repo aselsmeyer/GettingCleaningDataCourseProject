@@ -66,4 +66,4 @@ fullData.mean <- dcast(fullData.melted, subject + activity ~ variable, mean)
 
 
 # Create an independent tidy data set called tidy.txt
-write.table(fullData.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
+write.table(fullData.mean, "tidy.txt", row.name = FALSE, quote = FALSE)
