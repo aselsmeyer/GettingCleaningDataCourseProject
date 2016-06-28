@@ -59,7 +59,11 @@ colnames(fullData) <- c("subject", "activity", getFeatures.names)
 fullData$activity <- factor(fullData$activity, levels = activities[,1], labels = activities[,2])
 fullData$subject <- as.factor(fullData$subject)
 
+# Melt data and calculate mean
+
 fullData.melted <- melt(fullData, id = c("subject", "activity"))
 fullData.mean <- dcast(fullData.melted, subject + activity ~ variable, mean)
 
+
+# Create an independent tidy data set called tidy.txt
 write.table(fullData.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
